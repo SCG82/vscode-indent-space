@@ -1,9 +1,9 @@
 {
-	"name": "indent-one-space",
-	"displayName": "Indent one space",
+	"name": "indent-space",
+	"displayName": "Indent space",
 	"description": "Move code to left or right with a distance of one whitespace",
-	"version": "0.2.5",
-	"publisher": "usernamehw",
+	"version": "0.3.0",
+	"publisher": "SCG82",
 	"license": "MIT",
 	"icon": "img/icon.png",
 	"repository": {
@@ -28,26 +28,26 @@
 		"indentation"
 	],
 	"activationEvents": [
-		"onCommand:extension.indentOneSpace",
-		"onCommand:extension.reverseIndentOneSpace"
+		"onCommand:extension.indentSpace",
+		"onCommand:extension.outdentSpace"
 	],
 	"main": "./dist/extension",
 	"contributes": {
 		"configuration": {
 			"type": "object",
-			"title": "Indent one space",
+			"title": "Indent space",
 			"properties": {
-				"indentOneSpace.workOnSingleLine": {
+				"indentSpace.workOnSingleLine": {
 					"type": "boolean",
 					"default": true,
 					"description": "Command will execute even when only 1 line is selected."
 				},
-				"indentOneSpace.cramReversed": {
+				"indentSpace.cramReversed": {
 					"type": "boolean",
 					"default": true,
 					"description": "Outdent lines even if one of them reached column 0 (gutter)."
 				},
-				"indentOneSpace.onlyCompleteRange": {
+				"indentSpace.onlyCompleteRange": {
 					"type": "boolean",
 					"default": false,
 					"description": "Indent only when range is on either side has only whitespace characters and further - line boundaries."
@@ -56,24 +56,26 @@
 		},
 		"commands": [
 			{
-				"command": "extension.indentOneSpace",
+				"command": "extension.indentSpace",
 				"title": "Indent one space"
 			},
 			{
-				"command": "extension.reverseIndentOneSpace",
-				"title": "Reverse indent one space"
+				"command": "extension.outdentSpace",
+				"title": "Outdent one space"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "extension.indentOneSpace",
-				"key": "space",
-				"when": "editorTextFocus && !editorReadOnly && editorHasSelection"
+				"command": "extension.indentSpace",
+				"key": "ctrl+alt+]",
+				"mac": "control+cmd+]",
+				"when": "editorTextFocus && !editorReadOnly"
 			},
 			{
-				"command": "extension.reverseIndentOneSpace",
-				"key": "shift+space",
-				"when": "editorTextFocus && !editorReadOnly && editorHasSelection"
+				"command": "extension.outdentSpace",
+				"key": "ctrl+alt+[",
+				"mac": "control+cmd+[",
+				"when": "editorTextFocus && !editorReadOnly"
 			}
 		]
 	},

@@ -1,17 +1,15 @@
 ## Features
 
-You can move selected code left or right with the <kbd>Spacebar</kbd> key.
-
-![Moving left or right with hotkeys](img/demo.gif)
+Shift selected line(s) by one space
 
 ## Settings
 ```javascript
-"indentOneSpace.workOnSingleLine": true,// Even if 1 character on 1 line is selected - the command will work.
-"indentOneSpace.cramReversed": true,// Outdent lines even if one of them has reached column 0 (gutter).
-"indentOneSpace.onlyCompleteRange": false,// Indent works only when selection has nothing or whitespace characters on the sides
+"indentSpace.workOnSingleLine": true,// Even if 1 character on 1 line is selected - the command will work.
+"indentSpace.cramReversed": true,// Outdent lines even if one of them has reached column 0 (gutter).
+"indentSpace.onlyCompleteRange": false,// Indent works only when selection has nothing or whitespace characters on the sides
 ```
 
 ## Commands
 
-* **extension.indentOneSpace** default keybinding <kbd>Space</kbd>
-* **extension.reverseIndentOneSpace** default keybinding <kbd>Shift</kbd>+<kbd>Space</kbd>
+* **extension.indentSpace** default keybinding <kbd>ctrl</kbd>+<kbd>cmd</kbd>+]
+* **extension.outdentSpace** default keybinding <kbd>ctrl</kbd>+<kbd>cmd</kbd>+[
